@@ -23,7 +23,8 @@
   }
 
   &.large {
-    height: 380px;
+    height: 390px;
+    background-position-y: 30%;
   }
 
   &:first-child {
@@ -37,8 +38,8 @@
   .background-image {
     width: 100%;
     height: 100%;
-    background-position: center;
     background-size: cover;
+    background-position: center;
   }
 
   .content {

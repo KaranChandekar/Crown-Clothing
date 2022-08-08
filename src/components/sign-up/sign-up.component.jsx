@@ -4,7 +4,6 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
-
 import "./sign-up.styles.scss";
 
 class SignUp extends React.Component {
@@ -23,9 +22,8 @@ class SignUp extends React.Component {
     event.preventDefault();
 
     const { displayName, email, password, confirmPassword } = this.state;
-
     if (password !== confirmPassword) {
-      alert("password didn't match");
+      alert("Password didn't match");
       return;
     }
 
@@ -34,7 +32,8 @@ class SignUp extends React.Component {
         email,
         password
       );
-      await createUserProfileDocument(user, displayName);
+
+      createUserProfileDocument(user, { displayName });
 
       this.setState({
         displayName: "",
